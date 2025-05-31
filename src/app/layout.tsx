@@ -34,6 +34,7 @@ export default function RootLayout({
           <ScrollToTop />
         </Providers>
       </body>
+      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     </html>
   );
 }
