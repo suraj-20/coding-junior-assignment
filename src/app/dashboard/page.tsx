@@ -48,7 +48,7 @@ export default function DashboardPage() {
   return (
     <div className="p-6">
       <SearchBar search={search} setSearch={setSearch} />
-      <div className="grid grid-cols-4 gap-4 mt-4">
+      <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-4 mt-4">
         {filtered.map((user) => (
           <UserCard key={user.id} user={user} />
         ))}
