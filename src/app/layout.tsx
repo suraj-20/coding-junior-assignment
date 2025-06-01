@@ -1,18 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import ScrollToTop from "@/components/Common/ScrollUp";
 import "../styles/index.css";
 import { Providers } from "./providers";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+const inter = Inter({ subsets: ["latin"] });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -28,14 +21,13 @@ export default function RootLayout({
     <html suppressHydrationWarning={true} lang="en">
       <head />
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`bg-[#FCFCFC] dark:bg-black ${inter.className}`}
       >
         <Providers>
           {children}
           <ScrollToTop />
         </Providers>
       </body>
-      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     </html>
   );
 }
