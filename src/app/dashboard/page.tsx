@@ -5,6 +5,7 @@ import axios from "axios";
 import { User } from "@/types";
 import UserCard from "@/components/UserCard";
 import SearchBar from "@/components/SearchBar";
+import Link from "next/link";
 
 export default function DashboardPage() {
   const [users, setUsers] = useState<User[]>([]);
@@ -47,7 +48,16 @@ export default function DashboardPage() {
 
   return (
     <div className="p-6">
-      <SearchBar search={search} setSearch={setSearch} />
+      <div className="flex justify-between items-center">
+        <SearchBar search={search} setSearch={setSearch} />
+
+        {/* ✅ Add User Button */}
+        <Link href="/dashboard/add">
+          <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+            + Add User
+          </button>
+        </Link>
+      </div>
       <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-4 mt-4">
         {filtered.map((user) => (
           <UserCard key={user.id} user={user} />
